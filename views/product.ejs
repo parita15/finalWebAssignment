@@ -1,67 +1,103 @@
+<html>
 <%- include partials/header.ejs %>
-<%- include partials/main_nav.ejs %>
-  
+    <%- include partials/main_nav.ejs %>
 
-  <!-- Main Content -->
-  <main class="container">
-    <div class="jumbotron">
-      <h1 class="display-4">Welcome to the <%= title %> page</h1>
-    </div>
-  </main>
-  <body>
-    <div class="jumbotron">
-        <div style="display: flex;justify-content: space-between;">
-            <div style="background-color: red;width: 30%">
-                <div>
-                    <img src="https://www.w3schools.com/images/w3schools_green.jpg"  width="400" height="255">
-                    <h1>First</h1>
-                 </div>
-            </div>
-            <div style="background-color: red;width: 30%">
-                <img src="/public/Assets/images/beaw.png"  width="400" height="255">
-                <h1>Second</h1>
-            </div>
-            <div style="background-color: red;width: 30%">
-                <img src="https://www.w3schools.com/images/w3schools_green.jpg"  width="400" height="255">
-                <h1>Third</h1>
-            </div>
-        </div>
-        <div style="display: flex;justify-content: space-between;margin-top: 20px;">
-            <div style="background-color: red;width: 30%">
-                <img src="https://www.w3schools.com/images/w3schools_green.jpg"  width="400" height="255">
-                <h1>Fourth</h1>
-            </div>
-            <div style="background-color: red;width: 30%">
-                <img src="https://www.w3schools.com/images/w3schools_green.jpg"  width="400" height="255">
-                <h1>Fifth</h1>
-            </div>
-            <div style="background-color: red;width: 30%">
-                <img src="https://www.w3schools.com/images/w3schools_green.jpg"  width="400" height="255">
-                <h1>Sixth</h1>
-            </div>
-        </div>
-        <div style="display: flex;justify-content: space-between;margin-top: 20px;">
-            <div style="background-color: red;width: 30%">
-                <img src="https://www.w3schools.com/images/w3schools_green.jpg"  width="400" height="255">
-                <h1>Seventh</h1>
-            </div>
-            <div style="background-color: red;width: 30%">
-                <img src="https://www.w3schools.com/images/w3schools_green.jpg"  width="400" height="255">
-                <h1>Eighth</h1>
-            </div>
-            <div style="background-color: red;width: 30%">
-                <img src="https://www.w3schools.com/images/w3schools_green.jpg"  width="400" height="255">
-                <h1>Nineth</h1>
-            </div>
-        </div>
-    </div>
-  </body>
-  
-<%- include partials/bottom_nav.ejs %>  
+        <body>
+            <div class="jumbotron">
+                <div style="display: flex;justify-content: space-between;">
+                    <div style="background-color: white;">
+                        <div>
+                            <img src="data:image/jpeg;base64,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"
+                                width="400" height="255">
+                            <p style="margin-left: 20px">Notrail Website</p>
+                            <p style="display: flex; margin-left: 20px;">
+                                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button"
+                                    aria-expanded="false" aria-controls="collapseExample">
+                                    Description
+                                </a>
+                                <a style="margin-left: 30px" class="btn btn-primary" href="https://enotarial.com/" role="button">
+                                    Get Link
+                                </a>
+                            </p>
+                            <div class="collapse" id="collapseExample">
+                                <div class="card card-body">
+                                    We are Team Homaa Binary System, to facilitate notary in execution of notarization
+                                    work with more secured and easiest way with technology support by e-Notary SERVICE
+                                    all over india.
 
-<%- include partials/footer.ejs %>
-  
+                                    It gives more trust worthiness in notarization work, accountability and more
+                                    transparancy in work, gives easiness in legal proceedings.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background-color: white;">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKpIMQC6-YdzPHjeN3T-kQDfb7Wbj1LgZe6OICqm1j8w&s"
+                            height="255">
+                        <p style="margin-left: 20px">BEAW Mobile App</p>
+                        <p style="display: flex; margin-left: 20px">
+                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample1" role="button"
+                                aria-expanded="false" aria-controls="collapseExample1">
+                                Description
+                            </a>
+                            <a style="margin-left: 30px" class="btn btn-primary"  href="https://play.google.com/store/apps/details?id=com.app.qrcode.qrcode" role="button">
+                                Get Link
+                            </a>
+                        </p>
+                        <div class="collapse" id="collapseExample1">
+                            <div class="card card-body">
+                                We have created this application to book an appointment with us. it's simple and easy to
+                                use. Just display the QR code to our scanner machine to book an appointment.
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background-color: white;">
+                        <img src="data:image/png;base64,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"
+                            height="255">
+                        <p style="margin-left: 20px">ISmart Society Website
+                            <p style="display: flex;margin-left: 20px">
+                                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample2" role="button"
+                                    aria-expanded="false" aria-controls="collapseExample2">
+                                    Description
+                                </a>
+                                <a style="margin-left: 30px" class="btn btn-primary" href="https://ismartsecuritycore.intactitinfo.com/" role="button">
+                                    Get Link
+                                </a>
+                            </p>
+                        <div class="collapse" id="collapseExample2">
+                            <div class="card card-body">
+                                ISmart Society is an Award winning Internet based solution for the end-to-end Management
+                                of Office & Apartment Complexes (Commercial & Housing Societies).
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background-color: white;">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR3ioGDdO-JhJBp0ruP3hUTG0jrjzDaqSAUQ&usqp=CAU"
+                            height="255">
+                        <p style="margin-left: 20px">Milk Delivery App
+                            <p style="display: flex;margin-left: 20px">
+                                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample3" role="button"
+                                    aria-expanded="false" aria-controls="collapseExample3">
+                                    Description
+                                </a>
+                                <a style="margin-left: 30px" class="btn btn-primary" href="https://play.google.com/store/apps" role="button">
+                                    Get Link
+                                </a>
+                            </p>
+                        <div class="collapse" id="collapseExample3">
+                            <div class="card card-body">
+                                Think a mobile application allows you to order milk, butter, cheese, etc. Isn't it
+                                creative and convenient? People need to have everything delivered to their doorstep,
+                                including milk and other dairy products. Milk delivery app is becoming more famous every
+                                day with its unique features and delivery timings.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
 
+        <%- include partials/bottom_nav.ejs %>
 
-
-
+            <%- include partials/footer.ejs %>
+            </html>

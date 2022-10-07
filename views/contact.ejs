@@ -1,43 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contact Us</title>
-    </head>
-    <%- include partials/header.ejs %>
 
-<%- include partials/main_nav.ejs %>
-    <body>
-        <form style="margin-left: 80px;" action="/send" method="post">
-            <div class="form-group  col-2" >
-                <label>First Name: </label>
-                <input class="form-control" type="text" id="fname" name="fname"/>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+</head>
+<%- include partials/header.ejs %>
+
+    <%- include partials/main_nav.ejs %>
+
+        <body>
+            <div class="jumbotron">
+                <div style="display: flex;">
+                    <div class="jumbotron" style="background-color: rgba(0, 157, 255, 0.233); width: 50%; border-radius: 75; ">
+                        <h2>Contact Info:</h2>
+                        <p>Fill up the form and we will contact you soon</p>
+                    <div >
+                        <div style="display: flex;">
+                            <p style="margin-left: 5px;">Name:</p>
+                        <p style="margin-left: 5px;">Parita Shah</p>
+                        </div>
+                        <div style="display: flex;">
+                            <p style="margin-left: 5px;">Email Address:</p>
+                        <a href="https://gmail.com" style="margin-left: 5px;">parishah052@gmail.com</a>
+                        </div>  
+                        <div style="display: flex;margin-top: 8;">
+                            <p style="margin-left: 5px;">Contact Number:</p>
+                            <p style="margin-left: 5px;">+1 437-989-9255</p> 
+                        </div>
+                        
+                    </div>
+                    </div>
+                    <div>
+                        <form style="margin-left: 80px; margin-top: 10px;">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                  <label for="inputFirstName">First Name</label>
+                                  <input type="text" class="form-control" id="inputFirstName" placeholder="First Name">
+                                </div>
+                                <div class="form-group col-md-6">
+                                  <label for="inputLastName">Last Name</label>
+                                  <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+                                </div>
+                              </div>
+                              <div class="form-row">
+                                <div class="form-group col-md-6">
+                                  <label for="inputEmail4">Email</label>
+                                  <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                </div>
+                                <div class="form-group col-md-6">
+                                  <label for="inputContactNumber">Contact Number</label>
+                                  <input type="text" class="form-control" id="inputContactNumber" placeholder="Number">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label for="inputMessage">Message</label>
+                                <input type="text" class="form-control" id="inputMessage" placeholder="Message">
+                              </div>
+                            <div style="margin-left: 20px">
+                                <button type="button" class="btn btn-info"><a href="/home" class="nav-link px-2"
+                                        style="color: black; font-weight:bold;padding:3px;">Submit</a></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
             </div>
-            <div style="margin-top: -10px;" class="form-group  col-2">
-                <label>Last Name: </label>
-                <input class="form-control" type="text" id="lname" name="lname"/>
-            </div>
-            <div style="margin-top: -10px;" class="form-group  col-2">
-                <label>Contact Number: </label>
-                <input class="form-control" type="text" id="cnumber" name="cnumber"/>
-            </div>
-            <div style="margin-top: -10px;" class="form-group  col-2">
-                <label>Email Address: </label>
-                <input class="form-control" type="email" id="emailadd" name="emailadd"/>
-            </div>
-            <div style="margin-top: -10px;" class="form-group  col-2">
-                <label>Message: </label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
-            </div>
-            <div style="margin-left: 20px; margin-top: -10px">
-                <input type="button" name="newID" placeholder="Button">
-                <button class="btn btn-warning">send</button>
-                <!-- <button type="submit" class="btn btn-warning"><a href="/home" class="nav-link px-2" style="color: black; font-weight:bold;padding: 1px;">Submit</a></button> -->
-            </div>
-        </form>
-    </body>
-    <%- include partials/bottom_nav.ejs %>  
-    <%- include partials/footer.ejs %>
+        </body>
+        <%- include partials/bottom_nav.ejs %>
+            <%- include partials/footer.ejs %>
+
 </html>

@@ -1,26 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>About Us</title>
-    </head>
-    <%- include partials/header.ejs %>
-<%- include partials/main_nav.ejs %>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+</head>
+<%- include partials/header.ejs %>
+  <%- include partials/main_nav.ejs %>
+
     <body>
-      <div style="display:flex; margin-top: 20px; width:fit-content;">
-         <div>
-            <img src="https://www.w3schools.com/images/w3schools_green.jpg"  width="500" height="333">
-         </div>
-         <div style="margin-left: 30px">
-            <P style="font-size: 30px"> Myself Parita Shah. Currently I am studying in Centennial college and involed in the program of Software Engineering Technology - AI. This is my first year in college. Previously I was living in India and over there I have completed my BCA and having 3 years of IT compnay experience.</P>
-         </div>
+      <div class="jumbotron">
+        <div style="display:flex; margin-top: 20px; width:fit-content;">
+          <div>
+            <img src="../public/Assets/images/profile.jpeg" width="400px" height="300px">
+          </div>
+          <div style="margin-left: 30px">
+            <P style="font-size: 20px"> As beign a mobile developer I had worked on many projects which includes the
+              both android and IOS app. Alongwith this I have worked on several other technologies. During this time period
+              working on several project I had good experience in many technologies like nodejs, react native,
+              reactjs.Algonwith with this I had worked with many customer to fullfill there services and satisfaction
+              related to the project. WOrking with different customer needs is a good experience to learn new things with helps me a lot in developing my knowledge.
+            </P>
+          </div>
+
+        </div>
+        <div>
+          <a href="https://online.flippingbook.com/view/201876353/">
+            Resume Link</a>
+        </div>
       </div>
-      <div>
-        <h1>Resume Link</h1>
-      </div>
+
     </body>
-    <%- include partials/bottom_nav.ejs %>  
-    <%- include partials/footer.ejs %>
+    <%- include partials/bottom_nav.ejs %>
+      <%- include partials/footer.ejs %>
+
 </html>
