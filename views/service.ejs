@@ -1,0 +1,34 @@
+<%- include partials/header.ejs %>
+
+<%- include partials/main_nav.ejs %>
+  <!-- Main Content -->
+  <main class="container">
+    <div class="row">
+        <div class="offset-md-1 col-md-10">
+            <h1><%= title %></h1>
+            <br>
+            <table class="table table-bordered table-striped table-hover">
+                <!-- Header Row-->
+                <tr class="d-flex">
+                    <th class="text-center col-2">Name</th>
+                    <th class="text-center col-2">Service</th>
+                    <th class="col-6">Description</th>
+                </tr>
+
+                <!-- Repeatable Template Row -->
+
+                <% for(let count = 0; count < ServiceList.length; count++) { %>
+                    <tr class="d-flex">
+                        <td class="text-center col-2"><%= ServiceList[count].name %></td>
+                        <td class="text-center col-2"><%= ServiceList[count].service %></td>
+                        <td class="col-6"><%= ServiceList[count].description %></td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+  </main>
+  
+<%- include partials/bottom_nav.ejs %>  
+
+<%- include partials/footer.ejs %>
