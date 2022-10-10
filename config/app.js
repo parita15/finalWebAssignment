@@ -6,22 +6,22 @@ let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
 // database setup
-let mongoose = require('mongoose');
-let DB = require('./db');
+// let mongoose = require('mongoose');
+// let DB = require('./db');
 
-// point mongoose to the DB URI
-mongoose.connect("mongodb://127.0.0.1:27017/assignment2", {useNewUrlParser: true, useUnifiedTopology: true});
+// // point mongoose to the DB URI
+// mongoose.connect("mongodb://127.0.0.1:27017/assignment2", {useNewUrlParser: true, useUnifiedTopology: true});
 
-let mongoDB = mongoose.connection;
-mongoDB.on('error', console.error.bind(console, 'Connection Error:'));
-mongoDB.once('open', ()=>{
-  console.log('Connected to MongoDB...');
-});
+// let mongoDB = mongoose.connection;
+// mongoDB.on('error', console.error.bind(console, 'Connection Error:'));
+// mongoDB.once('open', ()=>{
+//   console.log('Connected to MongoDB...');
+// });
 
 let indexRouter = require('../routes/index');
-let usersRouter = require('../routes/users');
-let serviceRouter = require('../routes/services');
-let contactRouter = require('../routes/contact');
+// let usersRouter = require('../routes/users');
+// let serviceRouter = require('../routes/services');
+// let contactRouter = require('../routes/contact');
 
 let app = express();
 
@@ -37,9 +37,9 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.static(path.join(__dirname, '../node_modules')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/serviceList', serviceRouter);
-app.use('/contactPage', contactRouter)
+// app.use('/users', usersRouter);
+// app.use('/serviceList', serviceRouter);
+// app.use('/contactPage', contactRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
