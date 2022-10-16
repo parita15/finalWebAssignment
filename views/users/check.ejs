@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+    </style>
+</head>
+<%- include ../partials/header.ejs %>
+
+    <%- include ../partials/main_nav.ejs %>
+
+        <body>
+            <div class="jumbotron">
+                <div style="display: flex;">
+                    <div>
+                        <form action="http://localhost:3000/users/login" method="post" style="margin-left: 80px; margin-top: 10px;">
+                            <div class="form-row">
+                                <div class="form-group">
+                                  <label for="inputFirstName">User Name</label>
+                                  <input type="text" class="form-control" id="inputFirstName" placeholder="User Name">
+                                </div>
+                              </div>
+                              <div class="form-row">
+                                <div class="form-group">
+                                  <label for="inputPassword">Password</label>
+                                  <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                                </div>
+                              </div>
+                            <div>
+                                <button type="button" class="btn btn-info"><a href="/login" class="nav-link px-2"
+                                        style="color: black; font-weight:bold;padding:3px;">Submit</a></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </body>
+        <%- include ../partials/bottom_nav.ejs %>
+            <%- include ../partials/footer.ejs %>
+
+</html>

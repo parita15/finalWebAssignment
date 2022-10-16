@@ -1,9 +1,16 @@
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
+let mongoose = require('mongoose');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('Placeholder');
-});
+// connect to our Book Model
+let User = require('../models/users');
+
+let userController = require('../controllers/users');
+
+/* GET Route for displaying the Edit page - UPDATE Operation */
+router.get('/edit/:id', userController.userCheck);
+
+
+
 
 module.exports = router;

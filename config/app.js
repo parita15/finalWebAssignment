@@ -4,31 +4,30 @@ let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
-
+let passport = require('passport');
 // database setup
-// let mongoose = require('mongoose');
-// let DB = require('./db');
+let mongoose = require('mongoose');
+let DB = require('./db');
 
-// // point mongoose to the DB URI
-// mongoose.connect("mongodb://127.0.0.1:27017/assignment2", {useNewUrlParser: true, useUnifiedTopology: true});
+// point mongoose to the DB URI
+mongoose.connect(DB.URI, {useNewUrlParser: true, useUnifiedTopology: true});
 
-// let mongoDB = mongoose.connection;
-// mongoDB.on('error', console.error.bind(console, 'Connection Error:'));
-// mongoDB.once('open', ()=>{
-//   console.log('Connected to MongoDB...');
-// });
+let mongoDB = mongoose.connection;
+mongoDB.on('error', console.error.bind(console, 'Connection Error:'));
+mongoDB.once('open', ()=>{
+  console.log('Connected to MongoDB...');
+});
 
 let indexRouter = require('../routes/index');
-// let usersRouter = require('../routes/users');
-// let serviceRouter = require('../routes/services');
-// let contactRouter = require('../routes/contact');
+let usersRouter = require('../routes/users');
+let bussinessContactRouter = require('../routes/bussinesscontact');
+const db = require('./db');
 
 let app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs'); // express  -e
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -37,9 +36,8 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.static(path.join(__dirname, '../node_modules')));
 
 app.use('/', indexRouter);
-// app.use('/users', usersRouter);
-// app.use('/serviceList', serviceRouter);
-// app.use('/contactPage', contactRouter)
+app.use('/users', usersRouter);
+app.use('/contact-list', bussinessContactRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
