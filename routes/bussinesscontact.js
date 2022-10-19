@@ -2,27 +2,39 @@ let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 
-// connect to our Book Model
-let Contact = require('../models/bussinesslist');
+let jwt = require('jsonwebtoken');
 
-let contactController = require('../controllers/contactlist');
+let passport = require('passport');
+
+let bussinessContactController = require('../controllers/contactlist');
+
+// helper function for guard purposes
+function requireAuth(req, res, next)
+{
+    // check if the user is logged in
+    if(!req.isAuthenticated())
+    {
+        return res.redirect('/login');
+    }
+    next();
+}
 
 /* GET Route for the Book List page - READ Operation */
-router.get('/', contactController.displayContactList);
+router.get('/', bussinessContactController.displayContactList);
 
 /* GET Route for displaying the Add page - CREATE Operation */
-router.get('/add', contactController.displayAddPage);
+router.get('/add', requireAuth, bussinessContactController.displayAddPage);
 
 /* POST Route for processing the Add page - CREATE Operation */
-router.post('/add', contactController.processAddPage);
+router.post('/add', requireAuth, bussinessContactController.processAddPage);
 
 /* GET Route for displaying the Edit page - UPDATE Operation */
-router.get('/edit/:id', contactController.displayEditPage);
+router.get('/edit/:id', requireAuth, bussinessContactController.displayEditPage);
 
 /* POST Route for processing the Edit page - UPDATE Operation */
-router.post('/edit/:id', contactController.processEditPage);
+router.post('/edit/:id', requireAuth, bussinessContactController.processEditPage);
 
 /* GET to perform  Deletion - DELETE Operation */
-router.get('/delete/:id', contactController.performDelete);
+router.get('/delete/:id', requireAuth, bussinessContactController.performDelete);
 
 module.exports = router;

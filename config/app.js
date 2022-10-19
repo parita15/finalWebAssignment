@@ -4,7 +4,18 @@ let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
-let passport = require('passport');
+
+//modules for authentication
+let session = require('express-session');
+let passport = require('passport')
+
+let passportJWT = require('passport-jwt');
+let JWTStrategy = passportJWT.Strategy;
+let ExtractJWT = passportJWT.ExtractJwt;
+
+let passportLocal = require('passport-local');
+let flash = require('connect-flash');
+
 // database setup
 let mongoose = require('mongoose');
 let DB = require('./db');
@@ -21,7 +32,6 @@ mongoDB.once('open', ()=>{
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
 let bussinessContactRouter = require('../routes/bussinesscontact');
-const db = require('./db');
 
 let app = express();
 
@@ -34,6 +44,45 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.static(path.join(__dirname, '../node_modules')));
+
+//setup express session
+app.use(session({
+  secret: "SomeSecret",
+  saveUninitialized: false,
+  resave: false
+}))
+
+//initialize flash
+app.use(flash());
+
+//initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+let userModel = require('../models/users');
+let User = userModel.User;
+
+//implement a User Authentication Strategy
+passport.use(User.createStrategy());
+
+//serialize and deserialize the user info
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+let jwtOptions = {};
+jwtOptions.jwtFromRequest = ExtractJWT.fromAuthHeaderAsBearerToken();
+jwtOptions.secretOrKey = DB.Secret;
+console.log("===jwt_payload===", jwtOptions.secretOrKey)
+
+let strategy = new JWTStrategy(jwtOptions, (jwt_payload, done) => {
+  User.findById(jwt_payload.id).then(user => {
+    return done(null, user);
+  }).catch(err => {
+    return done(err, false);
+  })
+})
+console.log("====app user strategy", strategy)
+passport.use(strategy)
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

@@ -1,18 +1,13 @@
 <!-- Main Navigation -->
-
-<nav class="navbar-light bg-light">
-  <!-- <a class="navbar-brand" href="/">COMP229</a> -->
-  <div style="display: flex;justify-content: space-between;">
+  <nav class="navbar navbar-light bg-light">
+    <!-- <a class="navbar-brand" href="/">COMP229</a> -->
 
     <div>
       <a href="/home">
         <img src="/assets/images/logo.png" width="150px" height="50px" />
       </a>
     </div>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      style="margin-left: 80%;" aria-controls="navbarSupportedContent" aria-expanded="false"
-      aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -49,6 +44,13 @@
                   <% } %>
                     <a class="nav-link" href="/services"><i class="fas fa-cogs"></i> Services </a>
                 </li>
+                <% if (title=="Bussiness" ) { %>
+                  <li class="nav-item active">
+                    <% } else { %>
+                  <li class="nav-item">
+                    <% } %>
+                      <a class="nav-link" href="/contact-list"><i class="fas fa-cogs"></i> Bussiness Contact List </a>
+                  </li>
 
                 <% if (title=="Contact" ) { %>
                   <li class="nav-item active">
@@ -57,17 +59,12 @@
                     <% } %>
                       <a class="nav-link" href="/contact"><i class="fas fa-mobile-alt"></i> Contact </a>
                   </li>
+                  <div>
+                    <button type="button" class="btn btn-warning">
+                      <a href="/login">
+                        Login
+                      </a>
+                    </button>
+                  </div>
     </div>
-
-
-    <div>
-      <button type="button" class="btn btn-warning">
-        <a href="/login">
-          Login
-        </a>
-      </button>
-    </div>
-  </div>
-
-
-</nav>
+  </nav>
