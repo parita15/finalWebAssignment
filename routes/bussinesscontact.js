@@ -19,22 +19,22 @@ function requireAuth(req, res, next)
     next();
 }
 
-/* GET Route for the Book List page - READ Operation */
+/* GET Route for the business contact List page - READ Operation */
 router.get('/', bussinessContactController.displayContactList);
 
-/* GET Route for displaying the Add page - CREATE Operation */
+/* GET Route for displaying the contact Add page - CREATE Operation */
 router.get('/add', requireAuth, bussinessContactController.displayAddPage);
 
-/* POST Route for processing the Add page - CREATE Operation */
+/* POST Route for adding the contact page - CREATE Operation */
 router.post('/add', requireAuth, bussinessContactController.processAddPage);
 
-/* GET Route for displaying the Edit page - UPDATE Operation */
+/* GET Route for displaying the contact edit page - UPDATE Operation */
 router.get('/edit/:id', requireAuth, bussinessContactController.displayEditPage);
 
-/* POST Route for processing the Edit page - UPDATE Operation */
+/* POST Route for editing the contact page - UPDATE Operation */
 router.post('/edit/:id', requireAuth, bussinessContactController.processEditPage);
 
-/* GET to perform  Deletion - DELETE Operation */
+/* GET Route for deleting the contact page- DELETE Operation */
 router.get('/delete/:id', requireAuth, bussinessContactController.performDelete);
 
 module.exports = router;

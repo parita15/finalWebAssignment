@@ -1,6 +1,8 @@
 <html>
+<!--Importing the header file-->
 <%- include partials/header.ejs %>
     <%- include partials/main_nav.ejs %>
+        <!--Design for product page-->
 
         <body>
             <div class="jumbotron">
@@ -15,7 +17,8 @@
                                     aria-expanded="false" aria-controls="collapseExample">
                                     Description
                                 </a>
-                                <a style="margin-left: 30px" class="btn btn-primary" href="https://enotarial.com/" target="_blank" role="button">
+                                <a style="margin-left: 30px" class="btn btn-primary" href="https://enotarial.com/"
+                                    target="_blank" role="button">
                                     Get Link
                                 </a>
                             </p>
@@ -40,7 +43,9 @@
                                 aria-expanded="false" aria-controls="collapseExample1">
                                 Description
                             </a>
-                            <a style="margin-left: 30px" class="btn btn-primary" target="_blank"  href="https://play.google.com/store/apps/details?id=com.app.qrcode.qrcode" role="button">
+                            <a style="margin-left: 30px" class="btn btn-primary" target="_blank"
+                                href="https://play.google.com/store/apps/details?id=com.app.qrcode.qrcode"
+                                role="button">
                                 Get Link
                             </a>
                         </p>
@@ -55,15 +60,16 @@
                         <img src="data:image/png;base64,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"
                             height="255">
                         <p style="margin-left: 20px">ISmart Society Website
-                            <p style="display: flex;margin-left: 20px">
-                                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample2" role="button"
-                                    aria-expanded="false" aria-controls="collapseExample2">
-                                    Description
-                                </a>
-                                <a style="margin-left: 30px" class="btn btn-primary" target="_blank" href="https://ismartsecuritycore.intactitinfo.com/" role="button">
-                                    Get Link
-                                </a>
-                            </p>
+                        <p style="display: flex;margin-left: 20px">
+                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample2" role="button"
+                                aria-expanded="false" aria-controls="collapseExample2">
+                                Description
+                            </a>
+                            <a style="margin-left: 30px" class="btn btn-primary" target="_blank"
+                                href="https://ismartsecuritycore.intactitinfo.com/" role="button">
+                                Get Link
+                            </a>
+                        </p>
                         <div class="collapse" id="collapseExample2">
                             <div class="card card-body">
                                 ISmart Society is an Award winning Internet based solution for the end-to-end Management
@@ -75,15 +81,16 @@
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR3ioGDdO-JhJBp0ruP3hUTG0jrjzDaqSAUQ&usqp=CAU"
                             height="255">
                         <p style="margin-left: 20px">Milk Delivery App
-                            <p style="display: flex;margin-left: 20px">
-                                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample3" role="button"
-                                    aria-expanded="false" aria-controls="collapseExample3">
-                                    Description
-                                </a>
-                                <a style="margin-left: 30px" class="btn btn-primary" target="_blank" href="https://play.google.com/store/apps" role="button">
-                                    Get Link
-                                </a> 
-                            </p>
+                        <p style="display: flex;margin-left: 20px">
+                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample3" role="button"
+                                aria-expanded="false" aria-controls="collapseExample3">
+                                Description
+                            </a>
+                            <a style="margin-left: 30px" class="btn btn-primary" target="_blank"
+                                href="https://play.google.com/store/apps" role="button">
+                                Get Link
+                            </a>
+                        </p>
                         <div class="collapse" id="collapseExample3">
                             <div class="card card-body">
                                 Think a mobile application allows you to order milk, butter, cheese, etc. Isn't it
@@ -96,8 +103,9 @@
                 </div>
             </div>
         </body>
-
+        <!--Importing the footer file-->
         <%- include partials/bottom_nav.ejs %>
 
             <%- include partials/footer.ejs %>
-            </html>
+
+</html>
