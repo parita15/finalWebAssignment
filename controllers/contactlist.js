@@ -29,7 +29,7 @@ module.exports.processAddPage = (req, res, next) => {
     console.log("====processAddPage")
     let newContact = Contactlist({
         "contactName": req.body.contactName,
-        "contactAddress": req.body.contactAddress,
+        "contactNumber": req.body.contactNumber,
         "emailAddress": req.body.emailAddress
     });
     console.log("=====add contact===", req.body)
@@ -60,7 +60,7 @@ module.exports.displayEditPage = (req, res, next) => {
         else
         {
             //show the edit view
-            console.log("====contact edit", contactToEdit)
+         console.log("====contact edit", contactToEdit)   
             res.render('contact/edit', {title: 'Edit Contact', contact: contactToEdit})
         }
     });
@@ -72,7 +72,7 @@ module.exports.processEditPage = (req, res, next) => {
     let updatedContact = Contactlist({
         "_id": id,
         "contactName": req.body.contactName,
-        "contactAddress": req.body.contactAddress,
+        "contactNumber": req.body.contactNumber,
         "emailAddress": req.body.emailAddress
     });
     console.log("===updated contact list====", updatedContact)
